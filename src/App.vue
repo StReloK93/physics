@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="h-full">
+    <canvas ref="canvas" class="w-full h-full"></canvas>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Canvas from '@/scene/canvas'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  mounted(){
+    Canvas(this.$refs.canvas)
   }
 }
 </script>
 
 <style>
+.w-full{
+  width: 100%;
+}
+.h-full{
+  height: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  overflow: hidden;
 }
 </style>
